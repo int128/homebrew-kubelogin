@@ -3,10 +3,10 @@ class Kubelogin < Formula
   homepage "https://github.com/int128/kubelogin"
   url "https://github.com/int128/kubelogin/releases/download/1.6/kubelogin_1.6_darwin_amd64.tar.gz"
   version "1.6"
-  sha256 "97ab829abbbca29a3fe22cb11c91834a71bacd3d2a83ba2441b750b79d06936d"
+  sha256 "1dea514150979424ac0c7019253e4a58533e5ec1bc629241ff657a006de3a1b7"
 
   def install
-    bin.install kubelogin
+    bin.install "kubelogin"
   end
 
   test do
