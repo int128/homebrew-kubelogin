@@ -1,0 +1,12 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: linuxbrew/linuxbrew:1.9.3
+    environment:
+      HOMEBREW_NO_AUTO_UPDATE: 1
+    steps:
+      - checkout
+      - run: brew install kubelogin.rb
+      - run: brew test kubelogin
+
