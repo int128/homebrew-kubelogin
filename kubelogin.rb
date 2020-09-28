@@ -2,14 +2,14 @@ class Kubelogin < Formula
   desc "A kubectl plugin for Kubernetes OpenID Connect authentication"
   homepage "https://github.com/int128/kubelogin"
   baseurl = "https://github.com/int128/kubelogin/releases/download"
-  version "v1.20.1"
+  version "v1.21.0"
   
   if OS.mac?
     kernel = "darwin"
-    sha256 "3c8dd763474428c871579bad00d8af55b2151d5260c6b7db350fd563f754ff7a"
+    sha256 "5eeb96ef901cd427054de8256a979ac76df1eb30711fc978385c7e334f21025a"
   elsif OS.linux?
     kernel = "linux"
-    sha256 "1a61572dc76b6ec23c01ab15c7874ce6ae0e8ff470c7c1e7369ff3b2fe3dcdc0"
+    sha256 "e0022c7f49a8626be22400910c87b778162939719068b2800649f1c10186b672"
   end 
    
   url baseurl + "/#{version}/kubelogin_#{kernel}_amd64.zip"
