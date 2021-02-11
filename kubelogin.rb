@@ -4,8 +4,8 @@ class Kubelogin < Formula
   version "v1.22.0"
   
   on_macos do
-    url "https://github.com/int128/kubelogin/releases/download/v1.22.0/kubelogin_darwin_amd64.zip"
-    sha256 "b87b4ed009c05e93a0ed529dc7e9396a0357b207e375b1b42f12edb04df13bba"
+    url "https://github.com/int128/kubelogin/archive/v1.22.1.tar.gz"
+    sha256 "e78515d639579f91588111a2c05da90551f36da7674dc692cb4dbf67f0ff3b9c"
   end
   on_linux do
     url "https://github.com/int128/kubelogin/releases/download/v1.22.0/kubelogin_linux_amd64.zip"
