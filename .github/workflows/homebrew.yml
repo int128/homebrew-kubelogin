@@ -1,0 +1,17 @@
+name: homebrew
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    env:
+      HOMEBREW_NO_AUTO_UPDATE: 1
+    steps:
+      - uses: actions/checkout@v2
+      - run: brew install kubelogin.rb
+      - run: brew test kubelogin
