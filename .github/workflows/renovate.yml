@@ -11,4 +11,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - run: npx renovate-config-validator
+      - run: yarn add renovate
+      - run: yarn run renovate-config-validator
