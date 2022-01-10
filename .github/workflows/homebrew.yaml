@@ -1,10 +1,16 @@
 name: homebrew
 
 on:
-  push:
-    branches: [ master ]
   pull_request:
-    branches: [ master ]
+    paths:
+      - kubelogin.rb
+      - .github/workflows/homebrew.yaml
+  push:
+    branches:
+      - master
+    paths:
+      - kubelogin.rb
+      - .github/workflows/homebrew.yaml
 
 jobs:
   test:
