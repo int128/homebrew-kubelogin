@@ -1,5 +1,0 @@
-{
-  "homebrew": {
-    "fileMatch": ["^kubelogin.rb$"]
-  }
-}
