@@ -23,4 +23,4 @@ jobs:
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git commit -m "Update kubelogin.rb"
           git push origin update-kubelogin
-          gh pr create -f
+          gh pr create --title "Update kubelogin.rb" --body "Update kubelogin.rb"
