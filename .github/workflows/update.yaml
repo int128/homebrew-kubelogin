@@ -22,4 +22,5 @@ jobs:
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git commit -m "Update kubelogin.rb"
+          git push origin update-kubelogin
           gh pr create -f
