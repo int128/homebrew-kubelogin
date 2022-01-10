@@ -1,0 +1,15 @@
+name: update
+
+on:
+  pull_request:
+    paths:
+      - .github/workflows/update.yaml
+
+jobs:
+  formula:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: action/checkout@v2
+      - uses: int128/update-homebrew-formula-action@v1
+        with:
+          path: kubelogin.rb
