@@ -9,7 +9,7 @@ jobs:
   formula:
     runs-on: ubuntu-latest
     steps:
-      - uses: action/checkout@v2
+      - uses: actions/checkout@v2
       - uses: int128/update-homebrew-formula-action@v1
         with:
           path: kubelogin.rb
