@@ -1,0 +1,28 @@
+name: update
+
+on:
+  pull_request:
+    paths:
+      - .github/workflows/update.yaml
+  workflow_dispatch:
+
+jobs:
+  formula:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: int128/update-homebrew-formula-action@v1
+        with:
+          path: kubelogin.rb
+      - run: git diff
+      - env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: |
+          git checkout -b update-kubelogin
+          git add kubelogin.rb
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git commit -m "Update kubelogin.rb"
+          git push origin -f update-kubelogin
+          gh pr create --title "Update kubelogin.rb" --body "Update kubelogin.rb" || true
+          gh pr view
