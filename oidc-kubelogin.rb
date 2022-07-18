@@ -2,7 +2,7 @@
 class OidcKubelogin < Formula
   desc "A kubectl plugin for Kubernetes OpenID Connect authentication"
   homepage "https://github.com/int128/kubelogin"
-  version "1.24.0"
+  version "v1.25.1"
 
   case
   when OS.mac? && Hardware::CPU.intel?
