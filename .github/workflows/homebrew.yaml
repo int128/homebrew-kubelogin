@@ -3,13 +3,13 @@ name: homebrew
 on:
   pull_request:
     paths:
-      - kubelogin.rb
+      - '*.rb'
       - .github/workflows/homebrew.yaml
   push:
     branches:
       - master
     paths:
-      - kubelogin.rb
+      - '*.rb'
       - .github/workflows/homebrew.yaml
 
 jobs:
