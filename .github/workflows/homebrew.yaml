@@ -13,7 +13,7 @@ on:
       - .github/workflows/homebrew.yaml
 
 jobs:
-  test:
+  kubelogin:
     strategy:
       matrix:
         os:
@@ -26,3 +26,17 @@ jobs:
       - uses: actions/checkout@v2
       - run: brew install kubelogin.rb
       - run: brew test kubelogin
+
+  oidc-kubelogin:
+    strategy:
+      matrix:
+        os:
+          - ubuntu-latest
+          - macos-latest
+    runs-on: ${{ matrix.os }}
+    env:
+      HOMEBREW_NO_AUTO_UPDATE: 1
+    steps:
+      - uses: actions/checkout@v2
+      - run: brew install oidc-kubelogin.rb
+      - run: brew test oidc-kubelogin
