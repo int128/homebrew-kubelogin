@@ -13,30 +13,27 @@ on:
       - .github/workflows/homebrew.yaml
 
 jobs:
-  kubelogin:
-    strategy:
-      matrix:
-        os:
-          - ubuntu-latest
-          - macos-latest
-    runs-on: ${{ matrix.os }}
+  linux:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      HOMEBREW_NO_AUTO_UPDATE: 1
+    steps:
+      - uses: actions/checkout@v3
+      - run: /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+      - run: brew install kubelogin.rb
+      - run: brew test kubelogin
+      - run: brew install oidc-kubelogin.rb
+      - run: brew test oidc-kubelogin
+
+  macos:
+    runs-on: macos-latest
+    timeout-minutes: 10
     env:
       HOMEBREW_NO_AUTO_UPDATE: 1
     steps:
       - uses: actions/checkout@v3
       - run: brew install kubelogin.rb
       - run: brew test kubelogin
-
-  oidc-kubelogin:
-    strategy:
-      matrix:
-        os:
-          - ubuntu-latest
-          - macos-latest
-    runs-on: ${{ matrix.os }}
-    env:
-      HOMEBREW_NO_AUTO_UPDATE: 1
-    steps:
-      - uses: actions/checkout@v3
       - run: brew install oidc-kubelogin.rb
       - run: brew test oidc-kubelogin
