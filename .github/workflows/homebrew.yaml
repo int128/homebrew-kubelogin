@@ -21,6 +21,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - run: /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+      - run: echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >> /home/runner/.bash_profile
       - run: brew install kubelogin.rb
       - run: brew test kubelogin
       - run: brew install oidc-kubelogin.rb
