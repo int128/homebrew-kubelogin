@@ -1,12 +1,6 @@
 name: update
 
 on:
-  push:
-    branches:
-      - master
-  pull_request:
-    paths:
-      - .github/workflows/update.yaml
   workflow_dispatch:
   schedule:
     - cron: 0 0 * * *  # everyday
@@ -24,3 +18,6 @@ jobs:
             kubelogin.rb
             oidc-kubelogin.rb
       - uses: int128/update-generated-files-action@v2
+        with:
+          title: Update Homebrew formulas
+          body: This pull request will update the formulas.
