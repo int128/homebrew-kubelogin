@@ -2,21 +2,21 @@
 class OidcKubelogin < Formula
   desc "A kubectl plugin for Kubernetes OpenID Connect authentication"
   homepage "https://github.com/int128/kubelogin"
-  version "v1.25.3"
+  version "v1.25.4"
 
   case
   when OS.mac? && Hardware::CPU.intel?
-    url "https://github.com/int128/kubelogin/releases/download/v1.25.3/kubelogin_darwin_amd64.zip"
-    sha256 "713416fd9d7d9ac0903900a3cb9e98f04187bfec39667f391fedaa8825f9849f"
+    url "https://github.com/int128/kubelogin/releases/download/v1.25.4/kubelogin_darwin_amd64.zip"
+    sha256 "4d01349c647da0dd43868e5790f2e6bc3e4daaf00a05bc95f55c2ca31548e397"
   when OS.mac? && Hardware::CPU.arm?
-    url "https://github.com/int128/kubelogin/releases/download/v1.25.3/kubelogin_darwin_arm64.zip"
-    sha256 "93910aa264a10475c33ca98abdb5d78ff6767c45712fa7f080bf8902700e6e02"
+    url "https://github.com/int128/kubelogin/releases/download/v1.25.4/kubelogin_darwin_arm64.zip"
+    sha256 "f5160ad42764d370e599253bab46dfee6e47d381916b376a6b684c9134c60c6d"
   when OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/int128/kubelogin/releases/download/v1.25.3/kubelogin_linux_amd64.zip"
-    sha256 "9b4c96cdf623b7d25fb1a6ce45c2b3fa5260fd6ef0f08c89ac05cb00b603744f"
+    url "https://github.com/int128/kubelogin/releases/download/v1.25.4/kubelogin_linux_amd64.zip"
+    sha256 "f62c277aadf11e475620c37cfc6cc2e60c53c9628d39400305e7882c4ab25d3d"
   when OS.linux? && Hardware::CPU.arm?
-    url "https://github.com/int128/kubelogin/releases/download/v1.25.3/kubelogin_linux_arm64.zip"
-    sha256 "a73eb0b7f0481ab55d24064fb5a368ec749ee649c89c8ef79a71e831073fe8a4"
+    url "https://github.com/int128/kubelogin/releases/download/v1.25.4/kubelogin_linux_arm64.zip"
+    sha256 "cba7a3f92f86fad21d8b481b8910643b18e5570e886adba73dddbbe54afe5f24"
   else
     odie "Unexpected platform!"
   end
