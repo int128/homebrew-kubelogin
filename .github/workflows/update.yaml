@@ -8,16 +8,15 @@ on:
 jobs:
   formula:
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     steps:
-      - uses: actions/checkout@v3
-        with:
-          ref: ${{ github.head_ref }}
-      - uses: int128/update-homebrew-formula-action@v1
+      - uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9 # v3.5.3
+      - uses: int128/update-homebrew-formula-action@v1.25.0
         with:
           path: |
             kubelogin.rb
             oidc-kubelogin.rb
-      - uses: int128/update-generated-files-action@v2
+      - uses: int128/update-generated-files-action@c340c8e219a7159fc46417d34f4cb3ff6eac47ac # v2.40.0
         with:
           title: Update Homebrew formulas
           body: This pull request will update the formulas.
