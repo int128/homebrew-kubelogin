@@ -11,7 +11,7 @@ jobs:
     timeout-minutes: 10
     steps:
       - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
-      - uses: int128/update-homebrew-formula-action@a3b2a7c0d33ca1959298420d67c73098ff60200a # v1.25.0
+      - uses: int128/update-homebrew-formula-action@38ec4c252a6a768c9b2e19b6de1439bb1b8d0466 # v1.31.0
         with:
           path: |
             kubelogin.rb
