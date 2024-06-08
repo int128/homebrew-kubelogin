@@ -11,12 +11,12 @@ jobs:
     timeout-minutes: 10
     steps:
       - uses: actions/checkout@a5ac7e51b41094c92402da3b24376905380afc29 # v4.1.6
-      - uses: int128/update-homebrew-formula-action@a3b2a7c0d33ca1959298420d67c73098ff60200a # v1.25.0
+      - uses: int128/update-homebrew-formula-action@4464b4cbccf8833578600bf9eaa34271688565f5 # v1.32.0
         with:
           path: |
             kubelogin.rb
             oidc-kubelogin.rb
-      - uses: int128/update-generated-files-action@c340c8e219a7159fc46417d34f4cb3ff6eac47ac # v2.40.0
+      - uses: int128/update-generated-files-action@96ac74aa35f9d2e748335b60e7f3260304d22a6b # v2.51.0
         with:
           title: Update Homebrew formulas
           body: This pull request will update the formulas.
