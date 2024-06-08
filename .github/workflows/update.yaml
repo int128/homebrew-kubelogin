@@ -16,7 +16,7 @@ jobs:
           path: |
             kubelogin.rb
             oidc-kubelogin.rb
-      - uses: int128/update-generated-files-action@c340c8e219a7159fc46417d34f4cb3ff6eac47ac # v2.40.0
+      - uses: int128/update-generated-files-action@96ac74aa35f9d2e748335b60e7f3260304d22a6b # v2.51.0
         with:
           title: Update Homebrew formulas
           body: This pull request will update the formulas.
