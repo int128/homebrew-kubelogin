@@ -17,22 +17,25 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os:
-          - ubuntu-latest
-          - macos-latest
-        formula:
-          - kubelogin
-          - oidc-kubelogin
-    runs-on: ${{ matrix.os }}
+        target:
+          - os: ubuntu-latest
+            formula: kubelogin
+          - os: macos-latest
+            formula: kubelogin
+          - os: ubuntu-latest
+            formula: oidc-kubelogin
+          - os: macos-latest
+            formula: oidc-kubelogin
+    runs-on: ${{ matrix.target.os }}
     timeout-minutes: 10
     env:
       HOMEBREW_NO_AUTO_UPDATE: 1
     steps:
       - uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4.1.7
       # https://docs.brew.sh/Homebrew-on-Linux
-      - if: matrix.os == 'ubuntu-latest'
+      - if: matrix.target.os == 'ubuntu-latest'
         run: |
           /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
           echo /home/linuxbrew/.linuxbrew/bin >> $GITHUB_PATH
-      - run: brew install ${{ matrix.formula }}.rb
-      - run: brew test ${{ matrix.formula }}
+      - run: brew install ${{ matrix.target.formula }}.rb
+      - run: brew test ${{ matrix.target.formula }}
