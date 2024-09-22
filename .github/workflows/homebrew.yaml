@@ -20,8 +20,8 @@ jobs:
         target:
           - os: ubuntu-latest
             formula: kubelogin
-          - os: macos-latest
-            formula: kubelogin
+          # - os: macos-latest
+          #   formula: kubelogin
           - os: ubuntu-latest
             formula: oidc-kubelogin
           - os: macos-latest
