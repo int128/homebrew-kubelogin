@@ -4,4 +4,17 @@
     "github>int128/renovate-base",
     "helpers:pinGitHubActionDigests",
   ],
+  "customManagers": [
+    {
+      "customType": "regex",
+      "description": "Update the version in the workflow",
+      "fileMatch": [
+        "^\\.github/workflows/.+\\.yaml$"
+      ],
+      "matchStrings": [
+        "version: (?<currentValue>.+) # renovate: (?<depName>.+)\\n"
+      ],
+      "datasourceTemplate": "github-releases"
+    },
+  ]
 }
