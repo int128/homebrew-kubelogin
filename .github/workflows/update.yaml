@@ -16,7 +16,7 @@ jobs:
     timeout-minutes: 10
     steps:
       - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
-      - uses: int128/update-homebrew-formula-action@5db1d28c6f9155ea319b65849cfa82d54b40a07c # v2.3.0
+      - uses: int128/update-homebrew-formula-action@93a2d0adedc49d409dee6c489ddb01e86d6c450f # v2.4.0
         with:
           version: v1.34.0 # renovate: int128/kubelogin
           path: |
