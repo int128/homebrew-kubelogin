@@ -1,3 +1,11 @@
+## Deprecated notice :warning:
+
+Use https://formulae.brew.sh/formula/kubelogin instead.
+
+----
+
+## Getting Started
+
 To install [kubelogin](https://github.com/int128/kubelogin):
 
 ```sh
