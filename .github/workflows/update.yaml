@@ -15,7 +15,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
-      - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
+      - uses: actions/checkout@1af3b93b6815bc44a9784bd300feb67ff0d1eeb3 # v6.0.0
       - uses: int128/update-homebrew-formula-action@9acbb85f79d5b93973b97caf638be5e5090c32e4 # v2.5.0
         with:
           version: v1.34.0 # renovate: int128/kubelogin
