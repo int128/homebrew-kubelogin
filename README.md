@@ -1,4 +1,4 @@
-## Deprecated notice :warning:
+## Deprecated :warning:
 
 Use https://formulae.brew.sh/formula/kubelogin instead.
 
